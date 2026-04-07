@@ -28,15 +28,7 @@ const QRDisplay = () => {
         />
       </div>
 
-      <div style={{ marginTop: '20px' }}>
-        <a 
-          href={currentUrl} 
-          className="small-text" 
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', color: '#818cf8', textDecoration: 'none' }}
-        >
-          {currentUrl} <ExternalLink size={14} />
-        </a>
-      </div>
+      {/* Removed the link display below QR code as per user request */}
     </motion.div>
   )
 }

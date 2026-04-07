@@ -17,15 +17,6 @@ function App() {
     if (viewParam === 'admin') fetchSubmissions()
   }, [])
 
-  // Auto-redirect from success back to QR
-  useEffect(() => {
-    if (view === 'success') {
-      const timer = setTimeout(() => {
-        setView('qr');
-      }, 4000);
-      return () => clearTimeout(timer);
-    }
-  }, [view])
 
   const fetchSubmissions = async () => {
     const { data, error } = await supabase
@@ -46,7 +37,6 @@ function App() {
             <div className="success-icon">✓</div>
             <h1>Details Received!</h1>
             <p>Your information has been securely stored.</p>
-            <p style={{ fontSize: '14px', marginTop: '10px', opacity: 0.7 }}>Redirecting to home...</p>
           </div>
         )
       case 'admin':
